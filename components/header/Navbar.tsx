@@ -13,16 +13,16 @@ function Navbar() {
     <nav className="flex">
       <ul className="flex gap-2 py-2">
         <li>
-          <EnvelopeIcon size={24} className="text-foreground" />
+          <EnvelopeIcon size={24} className="" />
         </li>
         <li>
           <Link href="https://github.com/SAURETMathieu">
-            <GithubIcon size={24} className="text-foreground" />
+            <GithubIcon size={24} className="" />
           </Link>
         </li>
         <li>
           <Link href="https://www.linkedin.com/in/mathieu-sauret">
-            <LinkedinIcon size={24} className="text-foreground" />
+            <LinkedinIcon size={24} className="" />
           </Link>
         </li>
         <li className="pl-2">

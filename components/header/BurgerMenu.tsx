@@ -31,13 +31,13 @@ function BurgerMenu({ isOpen, setIsOpen }: BurgerMenuProps) {
       {isOpen ? (
         <CrossIcon
           size={24}
-          className="text-foreground"
+          className=""
           aria-label="Fermer le menu"
         />
       ) : (
         <BurgerIcon
           size={24}
-          className="text-foreground"
+          className=""
           aria-label="Ouvrir le menu"
         />
       )}
