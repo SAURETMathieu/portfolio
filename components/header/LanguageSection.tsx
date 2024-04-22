@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import React from "react";
-import ColorMode from "./ColorMode";
+import ThemeMode from "./ThemeMode";
 
 function LanguageSection() {
   return (
@@ -12,7 +12,7 @@ function LanguageSection() {
             <Image
               src="/images/french_flag.png"
               alt="Drapeau Français"
-              width={18}
+              width={22}
               height={18}
             />
             <span>FR</span>
@@ -21,14 +21,14 @@ function LanguageSection() {
             <Image
               src="/images/english_flag.png"
               alt="Drapeau Anglais"
-              width={18}
+              width={22}
               height={18}
             />
             <span>EN</span>
           </div>
         </div>
         <div className="p-2">
-          <ColorMode />
+          <ThemeMode />
         </div>
       </section>
   );
