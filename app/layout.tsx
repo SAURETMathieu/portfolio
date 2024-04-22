@@ -1,11 +1,10 @@
-import React, { useContext, useEffect } from "react";
+import React from "react";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { GeistSans } from "geist/font/sans";
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "../context/themeContext";
-import { useTheme } from "next-themes";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -24,7 +23,7 @@ export default function RootLayout({
 }>) {
 
   return (
-    <html lang="fr" className="h-full">
+    <html lang="fr" className="h-full" suppressHydrationWarning>
       <body className={cn(GeistSans.variable, inter, "font-sans h-full")}>
         <ThemeProvider
           attribute="class"
