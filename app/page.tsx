@@ -1,12 +1,11 @@
 import Header from "@/components/header/Header";
+import Main from "@/components/main/Main";
 
 export default function Home() {
   return (
     <>
-      <Header/>
-      <main className="bg-secondary h-full">
-        main
-      </main>
+      <Header />
+      <Main />
     </>
   );
 }
