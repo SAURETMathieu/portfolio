@@ -58,7 +58,7 @@ function SkillSection() {
   ];
 
   return (
-    <section className="w-full max-w-screen-xl text-center mt-8 mb-4 mx-auto">
+    <section id="skills" className="w-full max-w-screen-xl text-center mt-8 mb-4 mx-auto">
       <h3 className="text-3xl font-bold mb-6">COMPÉTENCES</h3>
       <div className="grid place-items-center gap-3 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4">
         {skillsCards.map((card) => (

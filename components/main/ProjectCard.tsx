@@ -37,7 +37,7 @@ function ProjectCard({
           alt={title}
           width={256}
           height={144}
-          className="aspect-video w-full h-1/3 object-cover"
+          className="aspect-video w-full h-1/3 object-cover border-2"
         />
       </div>
 
@@ -45,7 +45,7 @@ function ProjectCard({
         <h3 className="text-xl font-bold flex-start">{title}</h3>
         <div className="flex justify-center">
           {links.map((link) => (
-            <a href={link.url} key={link.id}>
+            <a href={link.url} key={link.id} target="_blank" rel="noopener noreferrer">
               <span className="hover:scale-105 hover:opacity-90 font-bold bg-accent border border-current text-xs p-1 rounded inline-flex items-center gap-1 m-1 mt-2">
                 <DynamicIcon name={link.icon} size={16} />
                 {link.name}

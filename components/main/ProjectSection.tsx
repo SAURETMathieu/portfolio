@@ -26,7 +26,7 @@ function ProjectSection() {
       title: "KING HIFI",
       description: `Application pour un véritable groupe de musique (crew) de Sound system Dub.
       Projet de fin de formation réalisé en groupe de 4, méthode agile, Scrum.`,
-      imageSrc: "/images/odd.png",
+      imageSrc: "/images/kinghifi.png",
       tags: [
         { id: 7, name: "React" },
         { id: 8, name: "Node.js" },
@@ -43,7 +43,7 @@ function ProjectSection() {
     {
       title: "Documentation",
       description: "Documentation personnelle qui rassemble mes réalisations et mes connaissances, fournissant une référence utile pour mes futurs projets et renforcer mon développement professionnel.",
-      imageSrc: "/images/odd.png",
+      imageSrc: "/images/documentation.png",
       tags: [
         { id: 12, name: "React" },
         { id: 13, name: "Docusaurus" },
@@ -58,7 +58,7 @@ function ProjectSection() {
     {
       title: "Portfolio",
       description: "Site vitrine personnel, présentant mes compétences, mes projets et mes réalisations.",
-      imageSrc: "/images/odd.png",
+      imageSrc: "/images/portfolio.png",
       tags: [
         { id: 16, name: "React" },
         { id: 17, name: "Next.js" },
@@ -73,7 +73,7 @@ function ProjectSection() {
   ]
 
   return (
-    <section className="w-full max-w-screen-xl text-center mt-8 mb-4 mx-auto">
+    <section id="projects" className="w-full max-w-screen-xl text-center mt-8 mb-4 mx-auto">
       <h3 className="text-3xl font-bold mb-6">PROJETS</h3>
       <div className="grid place-items-center gap-3 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4">
       {projectsCards.map((project) => (
