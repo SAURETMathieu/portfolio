@@ -4,6 +4,7 @@ import React from 'react';
 import ProfilSection from "./ProfilSection";
 import ProjectSection from "./ProjectSection";
 import SkillSection from "./SkillSection";
+import ExperienceSection from "./ExperienceSection";
 
 function Main() {
   return (
@@ -11,6 +12,7 @@ function Main() {
       <ProfilSection />
       <ProjectSection />
       <SkillSection />
+      <ExperienceSection />
     </main>
   );
 }
