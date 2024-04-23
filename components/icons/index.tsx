@@ -34,6 +34,10 @@ import { VersatileIcon } from "./VersatileIcon";
 import { GeniousIcon } from "./GeniousIcon";
 import { PerfectIcon } from "./PerfectIcon";
 import { SeriousIcon } from "./SeriousIcon";
+import { CIcon } from "./CIcon";
+import { CppIcon } from "./CppIcon";
+import { JavaIcon } from "./JavaIcon";
+import { MysqlIcon } from "./MysqlIcon";
 
 export const iconComponents = {
   React: ReactIcon,
@@ -72,4 +76,8 @@ export const iconComponents = {
   "Ingénieux": GeniousIcon,
   "Perfectionniste":PerfectIcon,
   "Sérieux": SeriousIcon,
+  "C": CIcon,
+  "C++": CppIcon,
+  "Java": JavaIcon,
+  "MySQL": MysqlIcon,
 };
