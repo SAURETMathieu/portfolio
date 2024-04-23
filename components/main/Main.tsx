@@ -1,10 +1,11 @@
 "use client";
 
-import React from 'react';
+import React from "react";
 import ProfilSection from "./ProfilSection";
 import ProjectSection from "./ProjectSection";
 import SkillSection from "./SkillSection";
 import ExperienceSection from "./ExperienceSection";
+import { ContactForm } from "./ContactSection";
 
 function Main() {
   return (
@@ -13,6 +14,7 @@ function Main() {
       <ProjectSection />
       <SkillSection />
       <ExperienceSection />
+      <ContactForm />
     </main>
   );
 }
