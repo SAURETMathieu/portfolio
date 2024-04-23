@@ -13,7 +13,7 @@ interface SkillCardProps {
 
 function SkillCard({ title, skills }: SkillCardProps) {
   return (
-    <div className="p-2 min-h-[250px] min-w-72 w-1/2 max-w-96 bg-accent/60 border border-current rounded">
+    <div className="p-2 min-w-72 max-w-80 bg-accent/60 border border-current rounded">
       <div className="p-2 h-2/3 flex-col justify-evenly">
         <h3 className="text-xl font-bold">{title}</h3>
         <div className="flex flex-wrap justify-evenly mt-4">
