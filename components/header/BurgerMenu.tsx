@@ -14,32 +14,12 @@ function BurgerMenu({ isOpen, setIsOpen }: BurgerMenuProps) {
     setIsOpen(!isOpen);
   };
 
-  const closeMenu = () => {
-    setIsOpen(false);
-  };
-
-  useEffect(() => {
-    document.body.addEventListener("click", closeMenu);
-
-    return () => {
-      document.body.removeEventListener("click", closeMenu);
-    };
-  }, []);
-
   return (
     <button onClick={toggleMenu}>
       {isOpen ? (
-        <CrossIcon
-          size={24}
-          className=""
-          aria-label="Fermer le menu"
-        />
+        <CrossIcon size={24} className="" aria-label="Fermer le menu" />
       ) : (
-        <BurgerIcon
-          size={24}
-          className=""
-          aria-label="Ouvrir le menu"
-        />
+        <BurgerIcon size={24} className="" aria-label="Ouvrir le menu" />
       )}
     </button>
   );
