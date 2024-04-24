@@ -30,7 +30,7 @@ function ProjectCard({
   links,
 }: ProjectCardProps) {
   return (
-    <div className="p-2 flex flex-col justify-between min-w-[288px] sm:min-h-[505px] lg:min-h-[520px] max-w-96 bg-accent/60 border border-current rounded">
+    <div className="p-2 flex flex-col justify-between min-w-[288px] sm:min-h-[505px] lg:min-h-[520px] max-w-96 bg-accent/60 border shadow shadow-ring border-ring rounded">
       <div className="flex-none">
         <Image
           src={imageSrc}
@@ -46,7 +46,7 @@ function ProjectCard({
         <div className="flex justify-center">
           {links.map((link) => (
             <a href={link.url} key={link.id} target="_blank" rel="noopener noreferrer">
-              <span className="hover:scale-105 hover:opacity-90 font-bold bg-accent border border-current text-xs p-1 rounded inline-flex items-center gap-1 m-1 mt-2">
+              <span className="hover:scale-105 hover:opacity-90 font-bold bg-accent border border-ring text-xs p-1 rounded inline-flex items-center gap-1 m-1 mt-2">
                 <DynamicIcon name={link.icon} size={16} />
                 {link.name}
               </span>
@@ -58,7 +58,7 @@ function ProjectCard({
       <div className="flex flex-none flex-wrap justify-center">
         {tags.map((tag) => (
           <span
-            className="font-bold bg-accent border border-current text-xs p-1 rounded inline-flex items-center gap-1 m-1 mt-2"
+            className="font-bold bg-accent border border-ring text-xs p-1 rounded inline-flex items-center gap-1 m-1 mt-2"
             key={tag.id}
           >
             <DynamicIcon name={tag.name} size={16} />

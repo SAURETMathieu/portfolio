@@ -1,9 +1,5 @@
 "use client";
 
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
-import { z } from "zod";
-
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -14,8 +10,12 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { Textarea } from "../ui/textarea";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
+import { LoadIcon } from "../icons/LoadIcon";
+import { Textarea } from "../ui/textarea";
 
 const formSchema = z.object({
   lastname: z.string().min(2, {
@@ -78,13 +78,13 @@ export function ContactForm() {
   return (
     <section
       id="contact"
-      className="w-full max-w-screen-lg text-center mt-8 mb-4 mx-auto"
+      className="w-full max-w-screen-lg text-center my-32 mx-auto"
     >
-      <h3 className="text-3xl font-bold mb-6">CONTACT</h3>
+      <h3 className="text-3xl lg:text-4xl font-bold mb-6">CONTACT</h3>
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
-          className="space-y-2 card p-4 border border-current rounded shadow-md bg-accent/60"
+          className="space-y-2 card p-4 rounded border shadow shadow-ring border-ring bg-accent/60"
         >
           <div className="flex flex-wrap justify-between">
             <div className="w-full sm:w-[48%]">
@@ -94,7 +94,7 @@ export function ContactForm() {
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel>Prénom</FormLabel>
-                    <FormControl>
+                    <FormControl className="hover:ring-1">
                       <Input placeholder="Indiquez votre prénom" {...field} />
                     </FormControl>
                     <FormMessage />
@@ -109,7 +109,7 @@ export function ContactForm() {
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel>Nom</FormLabel>
-                    <FormControl>
+                    <FormControl className="hover:ring-1">
                       <Input placeholder="Indiquez votre nom" {...field} />
                     </FormControl>
                     <FormMessage />
@@ -127,7 +127,7 @@ export function ContactForm() {
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel>Email</FormLabel>
-                    <FormControl>
+                    <FormControl className="hover:ring-1">
                       <Input
                         placeholder="Sur quelle adresse dois-je répondre ?"
                         type="email"
@@ -146,7 +146,7 @@ export function ContactForm() {
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel>Téléphone</FormLabel>
-                    <FormControl>
+                    <FormControl className="hover:ring-1">
                       <Input placeholder="Téléphone (facultatif)" {...field} />
                     </FormControl>
                     <FormMessage />
@@ -162,7 +162,7 @@ export function ContactForm() {
             render={({ field }) => (
               <FormItem>
                 <FormLabel>Message</FormLabel>
-                <FormControl>
+                <FormControl className="hover:ring-1">
                   <Textarea placeholder="Votre message ..." {...field} />
                 </FormControl>
                 <FormMessage />
@@ -174,25 +174,18 @@ export function ContactForm() {
               onClick={() => handleReset()}
               type="reset"
               aria-label="Supprimer le formulaire"
+              className="hover:ring-ring hover:ring-offset-2 hover:ring-2"
             >
               Effacer
             </Button>
             <Button
               type="submit"
-              className={isLoading ? "pointer-events-none cursor-not-allowed" : ""}
+              className={`${
+                isLoading ? "pointer-events-none cursor-not-allowed" : ""
+              } hover:ring-ring hover:ring-offset-2 hover:ring-2`}
               aria-label="Valider le formulaire"
             >
-              {isLoading && (
-                <svg
-                  className="animate-spin h-5 w-5 mr-3"
-                  viewBox="0 0 512 512"
-                >
-                  <path
-                    fill="currentColor"
-                    d="M304 48a48 48 0 1 0 -96 0 48 48 0 1 0 96 0zm0 416a48 48 0 1 0 -96 0 48 48 0 1 0 96 0zM48 304a48 48 0 1 0 0-96 48 48 0 1 0 0 96zm464-48a48 48 0 1 0 -96 0 48 48 0 1 0 96 0zM142.9 437A48 48 0 1 0 75 369.1 48 48 0 1 0 142.9 437zm0-294.2A48 48 0 1 0 75 75a48 48 0 1 0 67.9 67.9zM369.1 437A48 48 0 1 0 437 369.1 48 48 0 1 0 369.1 437z"
-                  />
-                </svg>
-              )}
+              {isLoading && <LoadIcon size={24} />}
               Envoyer
             </Button>
           </div>
