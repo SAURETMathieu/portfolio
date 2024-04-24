@@ -48,8 +48,25 @@
     --ring: 229 100% 62%;
     --radius: 0.5rem;
   }
+  
+  @keyframes shake {
+    0% {
+      transform: translateX(0);
+    }
+    25% {
+      transform: translateX(-2px);
+    }
+    50% {
+      transform: translateX(2px);
+    }
+    75% {
+      transform: translateX(-2px);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
 }
-
 
 @layer base {
   * {
