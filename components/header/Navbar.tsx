@@ -1,11 +1,13 @@
-import React, { useState } from "react";
-import { GithubIcon } from "../icons/GithubIcon";
-import { LinkedinIcon } from "../icons/LinkedinIcon";
+import { default as Link } from "next/link";
+import { useState } from "react";
 import { EnvelopeIcon } from "../icons/EnvelopeIcon";
+import { GithubIcon } from "../icons/GithubIcon";
+import { HomeIcon } from "../icons/HomeIcon";
+import { LinkedinIcon } from "../icons/LinkedinIcon";
 import BurgerMenu from "./BurgerMenu";
-import Link from "next/link";
 
 const navLinks = [
+  { id: "profil", name: "Accueil" },
   { id: "projects", name: "Projets" },
   { id: "skills", name: "Compétences" },
   { id: "experiences", name: "Expériences" },
@@ -18,11 +20,9 @@ function Navbar() {
   const handleClick = (id: string) => {
     const headerElement = document.querySelector("header");
     const targetElement = document.getElementById(id);
-    
+
     if (targetElement && headerElement) {
       const navbarHeight = headerElement.offsetHeight;
-      console.log(navbarHeight);
-
       window.scrollTo({
         top: targetElement.offsetTop - navbarHeight - 10,
         behavior: "smooth",
@@ -32,31 +32,60 @@ function Navbar() {
 
   return (
     <nav className="flex">
-      <ul className="hidden md:block md:flex md:justify-center md:items-center gap-6 text-xl mr-6">
+      <ul className="hidden md:block md:flex md:justify-center md:items-center md:gap-4 gap-6 text-lg mr-6 md:max-lg:border-l md:max-lg:border-white pl-3">
+        <li key="profil" className="cursor-pointer hover:text-gray-900">
+          <a
+            href={`#profil`}
+            onClick={(e) => {
+              e.preventDefault();
+              handleClick("profil");
+            }}
+          >
+            <HomeIcon
+              size={24}
+              className="cursor-pointer hover:text-gray-900"
+            />
+          </a>
+        </li>
         {navLinks &&
-          navLinks.map((link) => (
-            <li key={link.id} className="cursor-pointer hover:text-gray-900">
-              <a
-                href={`#${link.id}`}
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleClick(link.id);
-                }}
-              >
-                {link.name}
-              </a>
-            </li>
-          ))}
+          navLinks.map((link) => {
+            if (link.id !== "profil") {
+              return (
+                <li
+                  key={link.id}
+                  className="cursor-pointer hover:text-gray-900"
+                >
+                  <a
+                    href={`#${link.id}`}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleClick(link.id);
+                    }}
+                  >
+                    {link.name}
+                  </a>
+                </li>
+              );
+            }
+          })}
       </ul>
 
       <ul className="flex gap-2 md:gap-4 py-2 md:mr-4">
         <li>
-          <Link href="https://github.com/SAURETMathieu" target="_blank" rel="noopener noreferrer">
+          <Link
+            href="https://github.com/SAURETMathieu"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <GithubIcon size={24} className="md:hover:text-gray-900" />
           </Link>
         </li>
         <li>
-          <Link href="https://www.linkedin.com/in/mathieu-sauret" target="_blank" rel="noopener noreferrer">
+          <Link
+            href="https://www.linkedin.com/in/mathieu-sauret"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <LinkedinIcon size={24} className="md:hover:text-gray-900" />
           </Link>
         </li>
