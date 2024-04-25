@@ -16,6 +16,7 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { LoadIcon } from "../icons/LoadIcon";
 import { Textarea } from "../ui/textarea";
+import { toast } from "sonner"
 
 const formSchema = z.object({
   lastname: z.string().min(2, {
@@ -59,9 +60,10 @@ export function ContactForm() {
       });
 
       if (response.ok) {
+        toast.success('Message envoyé avec succès.');
         handleReset();
-      } else if (response.status === 400) {
-      } else {
+      }else {
+        toast.error('Erreur lors de l\'envoi du message. Veuillez réessayer.');
         throw new Error(`Response status: ${response.status}`);
       }
     } catch (error) {
@@ -72,6 +74,8 @@ export function ContactForm() {
   }
 
   function handleReset() {
+    // toast.loading('Loading...', { duration: 1500 });
+    toast.success('Formulaire supprimé');
     form.reset();
   }
 
@@ -182,7 +186,7 @@ export function ContactForm() {
               type="submit"
               className={`${
                 isLoading ? "pointer-events-none cursor-not-allowed" : ""
-              } hover:ring-ring hover:ring-offset-2 hover:ring-2`}
+              } hover:ring-ring hover:ring-offset-2 hover:ring-2 gap-2`}
               aria-label="Envoyer le formulaire"
             >
               {isLoading && <LoadIcon size={24} />}
