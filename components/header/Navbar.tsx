@@ -7,11 +7,11 @@ import { LinkedinIcon } from "../icons/LinkedinIcon";
 import BurgerMenu from "./BurgerMenu";
 
 const navLinks = [
-  { id: "profil", name: "Accueil" },
-  { id: "projects", name: "Projets" },
-  { id: "skills", name: "Compétences" },
-  { id: "experiences", name: "Expériences" },
-  { id: "contact", name: "Contact" },
+  { id: "profil", name: "Accueil", ariaLabel: "Lien vers le profil"},
+  { id: "projects", name: "Projets", ariaLabel: "Lien vers les projets"},
+  { id: "skills", name: "Compétences", ariaLabel: "Lien vers les compétences"},
+  { id: "experiences", name: "Expériences", ariaLabel: "Lien vers les expériences"},
+  { id: "contact", name: "Contact", ariaLabel: "Lien vers le formulaire de contact"},
 ];
 
 function Navbar() {
@@ -36,6 +36,7 @@ function Navbar() {
         <li key="profil" className="cursor-pointer hover:text-gray-900">
           <a
             href={`#profil`}
+            aria-label={"Lien vers le profil"}
             onClick={(e) => {
               e.preventDefault();
               handleClick("profil");
@@ -57,6 +58,7 @@ function Navbar() {
                 >
                   <a
                     href={`#${link.id}`}
+                    aria-label={link.ariaLabel}
                     onClick={(e) => {
                       e.preventDefault();
                       handleClick(link.id);
@@ -76,6 +78,7 @@ function Navbar() {
             href="https://github.com/SAURETMathieu"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Lien vers mon github"
           >
             <GithubIcon size={24} className="md:hover:text-gray-900" />
           </Link>
@@ -85,6 +88,7 @@ function Navbar() {
             href="https://www.linkedin.com/in/mathieu-sauret"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Lien vers mon linkedin"
           >
             <LinkedinIcon size={24} className="md:hover:text-gray-900" />
           </Link>
@@ -93,6 +97,7 @@ function Navbar() {
           <EnvelopeIcon
             size={24}
             className="cursor-pointer md:hover:text-gray-900"
+            aria-label="Lien vers le formulaire de contact"
             onClick={(e) => {
               e.preventDefault();
               handleClick("contact");
@@ -111,6 +116,7 @@ function Navbar() {
               <li key={link.id}>
                 <a
                   href={`#${link.id}`}
+                  aria-label={link.ariaLabel}
                   onClick={(e) => {
                     e.preventDefault();
                     handleClick(link.id);

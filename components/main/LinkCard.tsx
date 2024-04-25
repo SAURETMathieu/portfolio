@@ -9,16 +9,19 @@ const links = [
     id:1,
     href: "https://github.com/SAURETMathieu",
     icon: <GithubIcon size={24} />,
+    ariaLabel: "Lien vers mon profil Github",
   },
   {
     id:2,
     href: "https://www.linkedin.com/in/mathieu-sauret",
     icon: <LinkedinIcon size={24} />,
+    ariaLabel: "Lien vers mon profil LinkedIn",
   },
   {
     id:3,
     href: "mailto:mathieu08800@hotmail.fr",
     icon: <EnvelopeIcon size={24} />,
+    ariaLabel: "Ouvrir votre client mail pour m'envoyer un message",
   },
 ]
 
@@ -31,6 +34,7 @@ function LinkCard() {
           target="_blank"
           rel="noopener noreferrer"
           className="md:hover:text-gray-500 hover:cursor-pointer bg-primary/20 h-10 w-10 p-2 rounded ring-2 hover:animate-shake"
+          aria-label={link.ariaLabel}
           key={link.id}
         >
           {link.icon}
