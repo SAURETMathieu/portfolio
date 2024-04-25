@@ -30,7 +30,7 @@ function ProjectCard({
   links,
 }: ProjectCardProps) {
   return (
-    <div className="p-2 flex flex-col justify-between min-w-[288px] sm:min-h-[505px] lg:min-h-[520px] max-w-96 bg-accent/60 border shadow shadow-ring border-ring rounded">
+    <div className="p-2 flex flex-col justify-between min-w-[288px] sm:min-h-[520px] max-w-96 bg-accent/60 border shadow shadow-ring border-ring rounded">
       <div className="flex-none">
         <Image
           src={imageSrc}

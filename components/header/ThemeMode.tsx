@@ -16,7 +16,7 @@ function ThemeMode() {
     return (
       <MoonIcon
         size={24}
-        className=""
+        className="cursor-pointer md:hover:text-gray-900"
         aria-label="Passer en mode clair"
         onClick={() => setTheme("light")}
       />
@@ -27,7 +27,7 @@ function ThemeMode() {
     return (
       <SunIcon
         size={24}
-        className=""
+        className="cursor-pointer md:hover:text-gray-900"
         aria-label="Passer en mode sombre"
         onClick={() => setTheme("dark")}
       />

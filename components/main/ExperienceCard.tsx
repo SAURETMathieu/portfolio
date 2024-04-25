@@ -37,7 +37,7 @@ function ExperienceCard({
       </div>
       <div className="p-2 grow">
         <h3 className="text-xl font-bold flex-start">{title}</h3>
-        <h4 className="text-primary font-bold">{start} - {end}</h4>
+        <h4 className="font-bold">{start} - {end}</h4>
         <p className="text-left font-extralight mt-2">{description}</p>
       </div>
       <div className="flex flex-none flex-wrap justify-center">

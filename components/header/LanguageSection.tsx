@@ -17,8 +17,8 @@ function LanguageSection() {
           <span>EN</span>
         </div>
       </div>
-      <div className="p-2 cursor-pointer md:hover:text-gray-900">
-        <ThemeMode />
+      <div className="p-2 ">
+        <ThemeMode/>
       </div>
     </section>
   );
