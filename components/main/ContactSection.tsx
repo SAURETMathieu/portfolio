@@ -27,7 +27,7 @@ const formSchema = z.object({
   email: z.string().email({
     message: "Please enter a valid email.",
   }),
-  number: z.string().nullable(),
+  number: z.string(),
   message: z.string().min(10, {
     message: "Message must be at least 10 characters.",
   }),
@@ -173,7 +173,7 @@ export function ContactForm() {
             <Button
               onClick={() => handleReset()}
               type="reset"
-              aria-label="Supprimer le formulaire"
+              aria-label="Effacer le formulaire"
               className="hover:ring-ring hover:ring-offset-2 hover:ring-2"
             >
               Effacer
@@ -183,7 +183,7 @@ export function ContactForm() {
               className={`${
                 isLoading ? "pointer-events-none cursor-not-allowed" : ""
               } hover:ring-ring hover:ring-offset-2 hover:ring-2`}
-              aria-label="Valider le formulaire"
+              aria-label="Envoyer le formulaire"
             >
               {isLoading && <LoadIcon size={24} />}
               Envoyer
