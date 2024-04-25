@@ -8,7 +8,7 @@ function ProjectSection() {
       title: "O'DD",
       description: `Application de gestion d'élevage de dragodinde (monture) pour le jeu Dofus Rétro.
       Réalisé en solo dans le but de m'entraîner sur l'ensemble des notions acquises durant ma formation.`,
-      imageSrc: "/images/odd.png",
+      imageSrc: "/images/odd.webp",
       tags: [
         { id: 1, name: "Vanilla JS" },
         { id: 2, name: "HTML" },
@@ -26,7 +26,7 @@ function ProjectSection() {
       title: "KING HIFI",
       description: `Application pour un véritable groupe de musique (crew) de Sound system Dub.
       Projet de fin de formation réalisé en groupe de 4, méthode agile, Scrum.`,
-      imageSrc: "/images/kinghifi.png",
+      imageSrc: "/images/kinghifi.webp",
       tags: [
         { id: 7, name: "React" },
         { id: 8, name: "Node.js" },

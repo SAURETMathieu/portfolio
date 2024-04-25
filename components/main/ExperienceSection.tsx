@@ -7,7 +7,7 @@ function ExperienceSection() {
     {
       title: "Formation O'clock",
       description: `Formation de 6 mois en développement web fullstack. Titre professionnel Niveau 5`,
-      imageSrc: "/images/oclock.png",
+      imageSrc: "/images/oclock.webp",
       startAt:"09/2023",
       finishAt:"02/2024",
       tags: [
@@ -22,7 +22,7 @@ function ExperienceSection() {
     {
       title: "Joueur semi-pro",
       description: `Joueur semi-pro sur plusieurs jeux vidéos (League of Legends, Call of Duty, Town Star, Dofus, Casino).`,
-      imageSrc: "/images/gamer.jpeg",
+      imageSrc: "/images/gamer.webp",
       startAt:"2017",
       finishAt:"2024",
       tags: [
@@ -35,7 +35,7 @@ function ExperienceSection() {
     {
       title: "Équipier Macdonald",
       description: `Travail en équipe, gestion du personnel, du temps, du stress, des priorités, des clients. Optimisation, rapidité, efficacité.`,
-      imageSrc: "/images/macdo.jpeg",
+      imageSrc: "/images/macdo.webp",
       startAt:"2013",
       finishAt:"2024",
       tags: [
@@ -48,7 +48,7 @@ function ExperienceSection() {
     {
       title: "Licence Informatique",
       description: `Licence Mathématiques & Informatique à l'Université de Reims, spécialité Informatique.`,
-      imageSrc: "/images/reims.jpeg",
+      imageSrc: "/images/reims.webp",
       startAt:"2014",
       finishAt:"2017",
       tags: [

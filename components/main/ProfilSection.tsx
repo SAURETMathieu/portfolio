@@ -12,7 +12,7 @@ function ProfilSection() {
     >
       <div className="flex items-center justify-center rounded-full mx-auto my-6 ring-4 size-48 overflow-hidden">
         <Image
-          src="/images/me.jpeg"
+          src="/images/me.webp"
           alt="Photo de Mathieu SAURET"
           width={250}
           height={250}
