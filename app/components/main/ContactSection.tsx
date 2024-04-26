@@ -15,6 +15,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 import { z } from "zod";
+import config from "../../../next.config.mjs";
 import { LoadIcon } from "../icons/LoadIcon";
 import { Textarea } from "../ui/textarea";
 
@@ -51,7 +52,7 @@ export function ContactForm() {
   async function onSubmit(values: z.infer<typeof formSchema>) {
     try {
       setIsLoading(true);
-      const response = await fetch("/api/contact", {
+      const response = await fetch(config.basePath + "/api/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -61,7 +62,7 @@ export function ContactForm() {
 
       if (response.ok) {
         toast.success("Message envoyé avec succès.");
-        handleReset();
+        form.reset();
       } else {
         toast.error("Erreur lors de l'envoi du message. Veuillez réessayer.");
         throw new Error(`Response status: ${response.status}`);
@@ -74,7 +75,6 @@ export function ContactForm() {
   }
 
   function handleReset() {
-    // toast.loading('Loading...', { duration: 1500 });
     toast.success("Formulaire supprimé");
     form.reset();
   }
