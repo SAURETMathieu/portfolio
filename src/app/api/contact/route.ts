@@ -32,15 +32,12 @@ export async function POST(req: NextRequest) {
     }
 
     const transporter = nodemailer.createTransport({
-      host: 'smtp-mail.outlook.com',
+      service: 'outlook',
       port: 587,
       secure: false,
       auth: {
         user: process.env.MAIL,
         pass: process.env.MAIL_PASSWORD,
-      },
-      tls: {
-        ciphers: 'TLS_AES_256_GCM_SHA384:TLS_CHACHA20_POLY1305_SHA256:TLS_AES_128_GCM_SHA256:ECDHE-ECDSA-AES256-GCM-SHA384'
       },
     });
 
