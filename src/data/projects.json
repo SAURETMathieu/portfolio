@@ -62,7 +62,7 @@
     {
       "title": "Documentation",
       "description": "Documentation personnelle qui rassemble mes réalisations et mes connaissances, fournissant une référence utile pour mes futurs projets et renforcer mon développement professionnel.",
-      "imageSrc": "/images/documentation.png",
+      "imageSrc": "/images/documentation.wepb",
       "tags": [
         { "id": 12, "name": "React" },
         { "id": 13, "name": "Docusaurus" },
@@ -87,7 +87,7 @@
     {
       "title": "Portfolio",
       "description": "Site vitrine personnel, présentant mes compétences, mes projets et mes réalisations.",
-      "imageSrc": "/images/portfolio.png",
+      "imageSrc": "/images/portfolio.webp",
       "tags": [
         { "id": 16, "name": "React" },
         { "id": 17, "name": "Next.js" },

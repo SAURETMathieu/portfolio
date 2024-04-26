@@ -2,7 +2,7 @@
   "name": "portfolio",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://sauret-mathieu.vercel.app",
+  "homepage": "https://sauret-mathieu.up.railway.app",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
