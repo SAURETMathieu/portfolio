@@ -1,10 +1,10 @@
-import React from "react";
+import { cn } from "@/app/lib/utils";
+import { GeistSans } from "geist/font/sans";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import React from "react";
+import { ThemeProvider } from "./context/themeContext";
 import "./globals.css";
-import { GeistSans } from "geist/font/sans";
-import { cn } from "@/lib/utils";
-import { ThemeProvider } from "../context/themeContext";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -21,7 +21,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-
   return (
     <html lang="fr" className="h-full" suppressHydrationWarning>
       <body className={cn(GeistSans.variable, inter, "font-sans h-full")}>

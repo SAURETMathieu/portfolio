@@ -1,6 +1,6 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
+import { Button } from "@/app/components/ui/button";
 import {
   Form,
   FormControl,
@@ -8,15 +8,15 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
+} from "@/app/components/ui/form";
+import { Input } from "@/app/components/ui/input";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { toast } from "sonner";
 import { z } from "zod";
 import { LoadIcon } from "../icons/LoadIcon";
 import { Textarea } from "../ui/textarea";
-import { toast } from "sonner"
 
 const formSchema = z.object({
   lastname: z.string().min(2, {
@@ -60,10 +60,10 @@ export function ContactForm() {
       });
 
       if (response.ok) {
-        toast.success('Message envoyé avec succès.');
+        toast.success("Message envoyé avec succès.");
         handleReset();
-      }else {
-        toast.error('Erreur lors de l\'envoi du message. Veuillez réessayer.');
+      } else {
+        toast.error("Erreur lors de l'envoi du message. Veuillez réessayer.");
         throw new Error(`Response status: ${response.status}`);
       }
     } catch (error) {
@@ -75,7 +75,7 @@ export function ContactForm() {
 
   function handleReset() {
     // toast.loading('Loading...', { duration: 1500 });
-    toast.success('Formulaire supprimé');
+    toast.success("Formulaire supprimé");
     form.reset();
   }
 

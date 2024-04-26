@@ -1,8 +1,9 @@
 import Image from "next/image";
+import config from "../../../next.config.mjs";
 import { NodejsIcon } from "../icons/NodejsIcon";
 import { ReactIcon } from "../icons/ReactIcon";
-import LinkCard from "./LinkCard";
 import DownloadButton from "./DownloadButton";
+import LinkCard from "./LinkCard";
 
 function ProfilSection() {
   return (
@@ -12,7 +13,7 @@ function ProfilSection() {
     >
       <div className="flex items-center justify-center rounded-full mx-auto my-6 ring-4 size-48 overflow-hidden">
         <Image
-          src="/images/me.webp"
+          src={`${config.basePath}/images/me.webp`}
           alt="Photo de Mathieu SAURET"
           width={250}
           height={250}
@@ -32,7 +33,7 @@ function ProfilSection() {
       <div className="text-sm lg:text-basic font-light mb-2">
         Nice(06) - full remote possible
       </div>
-      <DownloadButton/>
+      <DownloadButton />
       <p className="p-2 text-basic lg:text-xl">
         Ancien joueur semi-professionnel de jeux vidéo reconverti en développeur
         web full stack.<br></br>
