@@ -90,7 +90,7 @@ export function ContactForm() {
           onSubmit={form.handleSubmit(onSubmit)}
           className="space-y-2 card p-4 rounded border shadow shadow-ring border-ring bg-accent/60"
         >
-          <div className="flex flex-wrap justify-between">
+          <div className="flex flex-wrap space-y-2 sm:space-y-0 justify-between">
             <div className="w-full sm:w-[48%]">
               <FormField
                 control={form.control}
@@ -123,7 +123,7 @@ export function ContactForm() {
             </div>
           </div>
 
-          <div className="flex flex-wrap justify-between">
+          <div className="flex flex-wrap space-y-2 sm:space-y-0 justify-between">
             <div className="w-full sm:w-[48%]">
               <FormField
                 control={form.control}
