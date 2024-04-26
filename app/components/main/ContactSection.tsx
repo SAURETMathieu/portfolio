@@ -15,9 +15,9 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 import { z } from "zod";
-import config from "../../../next.config.mjs";
 import { LoadIcon } from "../icons/LoadIcon";
 import { Textarea } from "../ui/textarea";
+import nextConfig from "../../../next.config.mjs";
 
 const formSchema = z.object({
   lastname: z.string().min(2, {
@@ -52,7 +52,7 @@ export function ContactForm() {
   async function onSubmit(values: z.infer<typeof formSchema>) {
     try {
       setIsLoading(true);
-      const response = await fetch("https://github.com/SAURETMathieu/portfolio/api/contact", {
+      const response = await fetch(`${nextConfig.basePath}/api/contact`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
