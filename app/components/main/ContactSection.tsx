@@ -52,7 +52,7 @@ export function ContactForm() {
   async function onSubmit(values: z.infer<typeof formSchema>) {
     try {
       setIsLoading(true);
-      const response = await fetch(config.basePath + "/api/contact", {
+      const response = await fetch("https://github.com/SAURETMathieu/portfolio/api/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
