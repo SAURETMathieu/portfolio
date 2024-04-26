@@ -62,7 +62,7 @@
     {
       "title": "Documentation",
       "description": "Documentation personnelle qui rassemble mes réalisations et mes connaissances, fournissant une référence utile pour mes futurs projets et renforcer mon développement professionnel.",
-      "imageSrc": "/images/documentation.wepb",
+      "imageSrc": "/images/documentation.webp",
       "tags": [
         { "id": 12, "name": "React" },
         { "id": 13, "name": "Docusaurus" },
