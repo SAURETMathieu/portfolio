@@ -7,11 +7,11 @@ import { LinkedinIcon } from "../icons/LinkedinIcon";
 import BurgerMenu from "./BurgerMenu";
 
 const navLinks = [
-  { id: "profil", name: "Accueil", ariaLabel: "Lien vers le profil"},
-  { id: "projects", name: "Projets", ariaLabel: "Lien vers les projets"},
-  { id: "skills", name: "Compétences", ariaLabel: "Lien vers les compétences"},
-  { id: "experiences", name: "Expériences", ariaLabel: "Lien vers les expériences"},
-  { id: "contact", name: "Contact", ariaLabel: "Lien vers le formulaire de contact"},
+  { id: "profil", name: "Accueil", ariaLabel: "Lien vers le profil", nameEn: "Home", ariaLabelEn: "Link to the profile"},
+  { id: "projects", name: "Projets", ariaLabel: "Lien vers les projets", nameEn: "Projects", ariaLabelEn: "Link to the projects"},
+  { id: "skills", name: "Compétences", ariaLabel: "Lien vers les compétences", nameEn: "Skills", ariaLabelEn: "Link to the skills"},
+  { id: "experiences", name: "Expériences", ariaLabel: "Lien vers les expériences", nameEn: "Experiences", ariaLabelEn: "Link to the experiences"},
+  { id: "contact", name: "Contact", ariaLabel: "Lien vers le formulaire de contact", nameEn: "Contact", ariaLabelEn: "Link to the contact"},
 ];
 
 function Navbar() {
