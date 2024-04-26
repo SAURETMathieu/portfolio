@@ -1,5 +1,4 @@
 import Image from "next/image";
-import config from "../../../next.config.mjs";
 import { NodejsIcon } from "../icons/NodejsIcon";
 import { ReactIcon } from "../icons/ReactIcon";
 import DownloadButton from "./DownloadButton";
@@ -13,7 +12,7 @@ function ProfilSection() {
     >
       <div className="flex items-center justify-center rounded-full mx-auto my-6 ring-4 size-48 overflow-hidden">
         <Image
-          src={`${config.basePath}/images/me.webp`}
+          src={"/images/me.webp"}
           alt="Photo de Mathieu SAURET"
           width={250}
           height={250}
