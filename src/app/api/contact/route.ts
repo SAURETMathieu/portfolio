@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import nodemailer from 'nodemailer';
+const nodemailer = require('nodemailer');
 import z from 'zod';
 
 const formSchema = z.object({
