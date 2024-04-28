@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useTranslations } from "next-intl";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
@@ -18,23 +19,25 @@ import { z } from "zod";
 import { LoadIcon } from "../icons/LoadIcon";
 import { Textarea } from "../ui/textarea";
 
-const formSchema = z.object({
-  lastname: z.string().min(2, {
-    message: "Lastname must be at least 2 characters.",
-  }),
-  firstname: z.string().min(2, {
-    message: "Firstname must be at least 2 characters.",
-  }),
-  email: z.string().email({
-    message: "Please enter a valid email.",
-  }),
-  number: z.string(),
-  message: z.string().min(10, {
-    message: "Message must be at least 10 characters.",
-  }),
-});
-
 export function ContactForm() {
+  const t = useTranslations("ContactSection");
+
+  const formSchema = z.object({
+    lastname: z.string().min(2, {
+      message: t("formLastnameError"),
+    }),
+    firstname: z.string().min(2, {
+      message: t("formFirstnameError"),
+    }),
+    email: z.string().email({
+      message: t("formEmailError"),
+    }),
+    number: z.string(),
+    message: z.string().min(10, {
+      message: t("formMessageError"),
+    }),
+  });
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -51,22 +54,19 @@ export function ContactForm() {
   async function onSubmit(values: z.infer<typeof formSchema>) {
     try {
       setIsLoading(true);
-      const response = await fetch(
-        `/api/contact`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(values),
-        }
-      );
+      const response = await fetch(`/api/contact`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(values),
+      });
 
       if (response.ok) {
-        toast.success("Message envoyé avec succès.");
+        toast.success(t("toastSuccess"));
         form.reset();
       } else {
-        toast.error("Erreur lors de l'envoi du message. Veuillez réessayer.");
+        toast.error(t("toastError"));
         throw new Error(`Response status: ${response.status}`);
       }
     } catch (error) {
@@ -77,7 +77,7 @@ export function ContactForm() {
   }
 
   function handleReset() {
-    toast.success("Formulaire supprimé");
+    toast.success(t("toastReset"));
     form.reset();
   }
 
@@ -86,7 +86,7 @@ export function ContactForm() {
       id="contact"
       className="w-full max-w-screen-lg text-center my-32 mx-auto"
     >
-      <h3 className="text-3xl lg:text-4xl font-bold mb-6">CONTACT</h3>
+      <h3 className="text-3xl lg:text-4xl font-bold mb-6">{t("title")}</h3>
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
@@ -99,9 +99,12 @@ export function ContactForm() {
                 name="firstname"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Prénom</FormLabel>
+                    <FormLabel>{t("formFirstnameLabel")}</FormLabel>
                     <FormControl className="hover:ring-1">
-                      <Input placeholder="Indiquez votre prénom" {...field} />
+                      <Input
+                        placeholder={t("formFirstnamePlaceholder")}
+                        {...field}
+                      />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -114,9 +117,12 @@ export function ContactForm() {
                 name="lastname"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Nom</FormLabel>
+                    <FormLabel>{t("formLastnameLabel")}</FormLabel>
                     <FormControl className="hover:ring-1">
-                      <Input placeholder="Indiquez votre nom" {...field} />
+                      <Input
+                        placeholder={t("formLastnamePlaceholder")}
+                        {...field}
+                      />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -132,10 +138,10 @@ export function ContactForm() {
                 name="email"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Email</FormLabel>
+                    <FormLabel>{t("formEmailLabel")}</FormLabel>
                     <FormControl className="hover:ring-1">
                       <Input
-                        placeholder="Sur quelle adresse dois-je répondre ?"
+                        placeholder={t("formEmailPlaceholder")}
                         type="email"
                         {...field}
                       />
@@ -151,9 +157,12 @@ export function ContactForm() {
                 name="number"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Téléphone</FormLabel>
+                    <FormLabel>{t("formPhoneLabel")}</FormLabel>
                     <FormControl className="hover:ring-1">
-                      <Input placeholder="Téléphone (facultatif)" {...field} />
+                      <Input
+                        placeholder={t("formPhonePlaceholder")}
+                        {...field}
+                      />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -167,9 +176,12 @@ export function ContactForm() {
             name="message"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Message</FormLabel>
+                <FormLabel>{t("formMessageLabel")}</FormLabel>
                 <FormControl className="hover:ring-1">
-                  <Textarea placeholder="Votre message ..." {...field} />
+                  <Textarea
+                    placeholder={t("formMessagePlaceholder")}
+                    {...field}
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -179,20 +191,20 @@ export function ContactForm() {
             <Button
               onClick={() => handleReset()}
               type="reset"
-              aria-label="Effacer le formulaire"
+              aria-label={t("formResetAria")}
               className="hover:ring-ring hover:ring-offset-2 hover:ring-2"
             >
-              Effacer
+              {t("formResetText")}
             </Button>
             <Button
               type="submit"
               className={`${
                 isLoading ? "pointer-events-none cursor-not-allowed" : ""
               } hover:ring-ring hover:ring-offset-2 hover:ring-2 gap-2`}
-              aria-label="Envoyer le formulaire"
+              aria-label={t("formSubmitAria")}
             >
               {isLoading && <LoadIcon size={24} />}
-              Envoyer
+              {t("formSubmitText")}
             </Button>
           </div>
         </form>

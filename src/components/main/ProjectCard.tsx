@@ -1,5 +1,4 @@
 import Image from "next/image";
-import React from "react";
 import DynamicIcon from "./DynamicIcon";
 
 interface Tag {
@@ -29,6 +28,7 @@ function ProjectCard({
   tags,
   links,
 }: ProjectCardProps) {
+
   return (
     <div className="p-2 flex flex-col justify-between min-w-[288px] sm:min-h-[520px] max-w-96 bg-accent/60 border shadow shadow-ring border-ring rounded">
       <div className="flex-none">
@@ -45,7 +45,12 @@ function ProjectCard({
         <h3 className="text-xl font-bold flex-start">{title}</h3>
         <div className="flex justify-center">
           {links.map((link) => (
-            <a href={link.url} key={link.id} target="_blank" rel="noopener noreferrer">
+            <a
+              href={link.url}
+              key={link.id}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <span className="hover:scale-105 hover:opacity-90 font-bold bg-accent border border-ring text-xs p-1 rounded inline-flex items-center gap-1 m-1 mt-2">
                 <DynamicIcon name={link.icon} size={16} />
                 {link.name}

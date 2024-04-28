@@ -1,0 +1,69 @@
+{
+  "IndexPage": {
+    "title": "Welcome to my portfolio"
+  },
+  "Navbar": {
+    "ariaProfile": "Link to the profile",
+    "ariaGithub": "Link to my Github",
+    "ariaLinkedin": "Link to my LinkedIn",
+    "ariaContact": "Link to the contact form"
+  },
+  "ThemeSwitcher": {
+    "ariaLabel": "Switch theme",
+    "ariaLight": "Light theme",
+    "ariaDark": "Dark theme",
+    "ariaFrench": "Change site language to French",
+    "ariaEnglish": "Change site language to English"
+  },
+  "DownloadButton": {
+    "text": "My CV",
+    "ariaLabel": "Download my CV",
+    "toastSuccess": "CV downloaded successfully.",
+    "toastError": "An error occurred while downloading the CV. Please try again."
+  },
+  "BurgerMenu": {
+    "ariaOpen": "Open the menu",
+    "ariaClose": "Close the menu"
+  },
+  "ProfilSection": {
+    "job": "Full stack web developer",
+    "open": "Open to opportunities",
+    "city": "Nice(06) - full remote possible",
+    "alt": "Photo of Mathieu SAURET",
+    "description-1": "Former semi-professional video game player turned full stack web developer.",
+    "description-2": "Specialized in"
+  },
+  "ProjectSection": {
+    "title": "PROJECTS"
+  },
+  "SkillSection": {
+    "title": "SKILLS"
+  },
+  "ExperienceSection": {
+    "title": "EXPERIENCES / FORMATIONS"
+  },
+  "ContactSection": {
+    "title": "CONTACT",
+    "toastSuccess": "Message sent successfully.",
+    "toastError": "Error sending message. Please try again.",
+    "toastReset": "Form cleared.",
+    "formFirstnamePlaceholder": "Enter your first name",
+    "formFirstnameLabel": "First name",
+    "formFirstnameError": "First name must be at least 2 characters long.",
+    "formLastnamePlaceholder": "Enter your last name",
+    "formLastnameLabel": "Last name",
+    "formLastnameError": "Last name must be at least 2 characters long.",
+    "formEmailPlaceholder": "Where should I reply?",
+    "formEmailLabel": "Email",
+    "formEmailError": "Please enter a valid email address.",
+    "formPhonePlaceholder": "Phone (optional)",
+    "formPhoneLabel": "Phone",
+    "formMessagePlaceholder": "Your message...",
+    "formMessageLabel": "Message",
+    "formMessageError": "Message must be at least 10 characters long.",
+    "formSubmitText": "Send",
+    "formResetText": "Clear",
+    "formSubmitAria": "Send message",
+    "formResetAria": "Clear form"
+  }
+}

@@ -1,21 +1,18 @@
+import { useLocale, useTranslations } from "next-intl";
 import { default as Link } from "next/link";
 import { useState } from "react";
+import navbar from "../../data/navbar.json";
 import { EnvelopeIcon } from "../icons/EnvelopeIcon";
 import { GithubIcon } from "../icons/GithubIcon";
 import { HomeIcon } from "../icons/HomeIcon";
 import { LinkedinIcon } from "../icons/LinkedinIcon";
 import BurgerMenu from "./BurgerMenu";
 
-const navLinks = [
-  { id: "profil", name: "Accueil", ariaLabel: "Lien vers le profil", nameEn: "Home", ariaLabelEn: "Link to the profile"},
-  { id: "projects", name: "Projets", ariaLabel: "Lien vers les projets", nameEn: "Projects", ariaLabelEn: "Link to the projects"},
-  { id: "skills", name: "Compétences", ariaLabel: "Lien vers les compétences", nameEn: "Skills", ariaLabelEn: "Link to the skills"},
-  { id: "experiences", name: "Expériences", ariaLabel: "Lien vers les expériences", nameEn: "Experiences", ariaLabelEn: "Link to the experiences"},
-  { id: "contact", name: "Contact", ariaLabel: "Lien vers le formulaire de contact", nameEn: "Contact", ariaLabelEn: "Link to the contact"},
-];
-
 function Navbar() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const locale = useLocale();
+
+  const t = useTranslations("Navbar");
 
   const handleClick = (id: string) => {
     const headerElement = document.querySelector("header");
@@ -36,7 +33,7 @@ function Navbar() {
         <li key="profil" className="cursor-pointer hover:text-gray-900">
           <a
             href={`#profil`}
-            aria-label={"Lien vers le profil"}
+            aria-label={t("ariaProfile")}
             onClick={(e) => {
               e.preventDefault();
               handleClick("profil");
@@ -48,8 +45,8 @@ function Navbar() {
             />
           </a>
         </li>
-        {navLinks &&
-          navLinks.map((link) => {
+        {navbar &&
+          navbar.map((link) => {
             if (link.id !== "profil") {
               return (
                 <li
@@ -58,13 +55,13 @@ function Navbar() {
                 >
                   <a
                     href={`#${link.id}`}
-                    aria-label={link.ariaLabel}
+                    aria-label={link[`ariaLabel${locale === "en" ? "En" : ""}`]}
                     onClick={(e) => {
                       e.preventDefault();
                       handleClick(link.id);
                     }}
                   >
-                    {link.name}
+                    {link[`name${locale === "en" ? "En" : ""}`]}
                   </a>
                 </li>
               );
@@ -78,7 +75,7 @@ function Navbar() {
             href="https://github.com/SAURETMathieu"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Lien vers mon github"
+            aria-label={t("ariaGithub")}
           >
             <GithubIcon size={24} className="md:hover:text-gray-900" />
           </Link>
@@ -88,7 +85,7 @@ function Navbar() {
             href="https://www.linkedin.com/in/mathieu-sauret"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Lien vers mon linkedin"
+            aria-label={t("ariaLinkedin")}
           >
             <LinkedinIcon size={24} className="md:hover:text-gray-900" />
           </Link>
@@ -97,7 +94,7 @@ function Navbar() {
           <EnvelopeIcon
             size={24}
             className="cursor-pointer md:hover:text-gray-900"
-            aria-label="Lien vers le formulaire de contact"
+            aria-label={t("ariaContact")}
             onClick={(e) => {
               e.preventDefault();
               handleClick("contact");
@@ -111,8 +108,8 @@ function Navbar() {
 
       {isOpen && (
         <ul className="fixed left-0 top-[61px] text-foreground bg-secondary flex flex-col justify-center pb-12 items-center gap-8 text-3xl h-screen w-screen z-99">
-          {navLinks &&
-            navLinks.map((link) => (
+          {navbar &&
+            navbar.map((link) => (
               <li key={link.id}>
                 <a
                   href={`#${link.id}`}

@@ -1,13 +1,14 @@
+import { useLocale } from "next-intl";
 import Image from "next/image";
-import React from "react";
 import DynamicIcon from "./DynamicIcon";
 
 interface Tag {
   id: number;
   name: string;
+  nameEn: string;
 }
 
-interface ProjectCardProps {
+interface ExperienceCardProps {
   title: string;
   description: string;
   imageSrc: string;
@@ -23,7 +24,9 @@ function ExperienceCard({
   tags,
   start,
   end,
-}: ProjectCardProps) {
+}: ExperienceCardProps) {
+  const locale = useLocale();
+
   return (
     <div className="p-2 flex flex-col justify-between min-w-[288px] sm:min-h-[450px] max-w-96 bg-accent/60 border shadow shadow-ring border-ring rounded">
       <div className="flex-none">
@@ -37,7 +40,9 @@ function ExperienceCard({
       </div>
       <div className="p-2 grow">
         <h3 className="text-xl font-bold flex-start">{title}</h3>
-        <h4 className="font-bold">{start} - {end}</h4>
+        <h4 className="font-bold">
+          {start} - {end}
+        </h4>
         <p className="text-left font-extralight mt-2">{description}</p>
       </div>
       <div className="flex flex-none flex-wrap justify-center">
@@ -47,7 +52,7 @@ function ExperienceCard({
             key={tag.id}
           >
             <DynamicIcon name={tag.name} size={16} />
-            {tag.name}
+            {tag[`name${locale === "en" ? "En" : ""}`]}
           </span>
         ))}
       </div>

@@ -8,6 +8,7 @@ import ExperienceSection from "./ExperienceSection";
 import { ContactForm } from "./ContactSection";
 
 function Main() {
+  
   return (
     <main className="bg-secondary h-fit p-4 pt-20 border-current text-current">
       <ProfilSection />
