@@ -52,7 +52,7 @@ function ProjectCard({
               target="_blank"
               rel="noopener noreferrer"
             >
-              <span className="hover:scale-105 hover:opacity-90 font-bold bg-accent border border-ring text-xs p-1 rounded inline-flex items-center gap-1 m-1 mt-2">
+              <span className="hover:scale-105 hover:opacity-90 font-bold dark:bg-accent bg-white border border-ring text-xs p-1 rounded inline-flex items-center gap-1 m-1 mt-2">
                 <DynamicIcon name={link.icon} size={16} />
                 {link.name}
               </span>
@@ -64,7 +64,7 @@ function ProjectCard({
       <div className="flex flex-none flex-wrap justify-center">
         {tags.map((tag) => (
           <span
-            className="font-bold bg-accent border border-ring text-xs p-1 rounded inline-flex items-center gap-1 m-1 mt-2"
+            className="font-bold dark:bg-accent bg-white border border-ring text-xs p-1 rounded inline-flex items-center gap-1 m-1 mt-2"
             key={tag.id}
           >
             <DynamicIcon name={tag.name} size={16} />

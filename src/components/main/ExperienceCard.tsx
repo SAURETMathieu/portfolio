@@ -49,7 +49,7 @@ function ExperienceCard({
       <div className="flex flex-none flex-wrap justify-center">
         {tags.map((tag) => (
           <span
-            className="font-bold bg-accent border border-ring text-xs p-1 rounded inline-flex items-center gap-1 m-1 mt-2"
+            className="font-bold dark:bg-accent bg-white border border-ring text-xs p-1 rounded inline-flex items-center gap-1 m-1 mt-2"
             key={tag.id}
           >
             <DynamicIcon name={tag.name} size={16} />
