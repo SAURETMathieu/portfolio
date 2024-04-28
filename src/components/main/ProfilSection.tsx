@@ -38,7 +38,7 @@ function ProfilSection() {
           <ReactIcon size={16} className="inline" />
           React
         </span>{" "}
-        et
+        {t("description-3")}
         <span className="font-bold text-xs lg:text-basic bg-primary/20 border border-accent p-1 rounded inline-flex items-center gap-2 m-1 mt-2">
           <NodejsIcon size={16} className="inline" />
           Node.js
