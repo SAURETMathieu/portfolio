@@ -36,6 +36,7 @@ function ExperienceCard({
           width={256}
           height={144}
           className="aspect-video w-full h-1/3 object-cover border-2"
+          priority
         />
       </div>
       <div className="p-2 grow">

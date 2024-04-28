@@ -113,14 +113,14 @@ function Navbar() {
               <li key={link.id}>
                 <a
                   href={`#${link.id}`}
-                  aria-label={link.ariaLabel}
+                  aria-label={link[`ariaLabel${locale === "en" ? "En" : ""}`]}
                   onClick={(e) => {
                     e.preventDefault();
                     handleClick(link.id);
                     setIsOpen(false);
                   }}
                 >
-                  {link.name}
+                  {link[`name${locale === "en" ? "En" : ""}`]}
                 </a>
               </li>
             ))}

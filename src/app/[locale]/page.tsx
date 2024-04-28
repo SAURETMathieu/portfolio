@@ -5,8 +5,7 @@ import { Toaster } from "@/components/ui/sonner";
 import { useTranslations } from "next-intl";
 
 export default function Home() {
-
-  const t = useTranslations('IndexPage');
+  const t = useTranslations("IndexPage");
 
   return (
     <>

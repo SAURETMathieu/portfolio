@@ -1,11 +1,11 @@
 import { cn } from "@/lib/utils";
 import { GeistSans } from "geist/font/sans";
 import type { Metadata } from "next";
+import { NextIntlClientProvider, useMessages } from "next-intl";
 import { Inter } from "next/font/google";
 import React from "react";
 import { ThemeProvider } from "../../context/themeContext";
 import "./globals.css";
-import { NextIntlClientProvider, useMessages} from "next-intl";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -26,24 +26,20 @@ export default function RootLayout({
     locale: string;
   };
 }>) {
-
   const messages = useMessages();
 
   return (
     <html lang={locale} className="h-full" suppressHydrationWarning>
       <body className={cn(GeistSans.variable, inter, "font-sans h-full")}>
-        <NextIntlClientProvider
-          locale={locale}
-          messages={messages}
-        >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem={true}
-          disableTransitionOnChange
-        >
-          {children}
-        </ThemeProvider>
+        <NextIntlClientProvider locale={locale} messages={messages}>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="dark"
+            enableSystem={true}
+            disableTransitionOnChange
+          >
+            {children}
+          </ThemeProvider>
         </NextIntlClientProvider>
       </body>
     </html>
