@@ -13,9 +13,9 @@ function ProfilSection() {
       id="profil"
       className="w-full flex-col text-center max-w-3xl mb-36 lg:mt-12 xl:mt-20 mx-auto"
     >
-      <div className="flex items-center justify-center rounded-full mx-auto my-6 ring-4 size-48 overflow-hidden">
+      <div className="flex items-center justify-center bg-primary rounded-full mx-auto my-6 ring-4 size-48 overflow-hidden">
         <Image
-          src={"/images/me.webp"}
+          src={"/images/me2.webp"}
           alt={t("alt")}
           width={250}
           height={250}

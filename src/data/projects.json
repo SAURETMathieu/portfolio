@@ -63,7 +63,7 @@
   {
     "title": "Documentation",
     "description": "Documentation personnelle qui rassemble mes réalisations et mes connaissances, fournissant une référence utile pour mes futurs projets et renforcer mon développement professionnel.",
-    "descriptionEn": "Personal documentation that brings together my achievements and knowledge, providing a useful reference for my future projects and strengthening my professional development.",
+    "descriptionEn": "Personal documentation that brings together my achievements and knowledge, providing a useful reference for my future projects and boosting my professional development.",
     "imageSrc": "/images/documentation.webp",
     "tags": [
       { "id": 12, "name": "React" },
