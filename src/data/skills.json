@@ -8,7 +8,7 @@
       { "id": 10, "name": "HTML", "nameEn": "HTML" },
       { "id": 8, "name": "Tailwind", "nameEn": "Tailwind" },
       { "id": 7, "name": "Bulma", "nameEn": "Bulma" },
-      { "id": 11, "name": "Vanilla CSS", "nameEn": "Vanilla CSS" },
+      { "id": 11, "name": "CSS", "nameEn": "CSS" },
       { "id": 6, "name": "Vite", "nameEn": "Vite" },
       { "id": 5, "name": "Next.js", "nameEn": "Next.js" }
     ]

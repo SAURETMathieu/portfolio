@@ -57,7 +57,7 @@
     "tags": [
       { "id": 15, "name": "PHP", "nameEn": "PHP" },
       { "id": 16, "name": "HTML", "nameEn": "HTML" },
-      { "id": 17, "name": "Vanilla CSS", "nameEn": "Vanilla CSS" },
+      { "id": 17, "name": "CSS", "nameEn": "CSS" },
       { "id": 18, "name": "C", "nameEn": "C" },
       { "id": 19, "name": "C++", "nameEn": "C++" },
       { "id": 20, "name": "Java", "nameEn": "Java" },
