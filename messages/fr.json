@@ -65,5 +65,9 @@
     "formResetText": "Effacer",
     "formSubmitAria": "Envoyer le message",
     "formResetAria": "Effacer le formulaire"
+  },
+  "Footer": {
+    "text1": "Tous droits réservés.",
+    "text2": "Réalisé avec"
   }
 }

@@ -65,5 +65,9 @@
     "formResetText": "Clear",
     "formSubmitAria": "Send message",
     "formResetAria": "Clear form"
+  },
+  "Footer": {
+    "text1": "All rights reserved.",
+    "text2": "Made with"
   }
 }
