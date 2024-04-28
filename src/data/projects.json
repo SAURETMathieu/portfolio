@@ -1,16 +1,16 @@
 [
   {
     "title": "O'DD",
-    "description": "Application de gestion d'élevage de dragodinde (monture) pour le jeu Dofus Rétro. Réalisé en solo dans le but de m'entraîner sur l'ensemble des notions acquises durant ma formation.",
-    "descriptionEn": "Breeding management application for the Dofus Rétro game. Made solo to practice all the concepts learned during my training.",
+    "description": "Application de gestion d'élevage de monture pour le jeu Dofus Rétro. Réalisé en solo afin de m'entraîner sur l'ensemble des notions acquises durant ma formation.",
+    "descriptionEn": "Mount breeding management application for the Dofus Rétro game. Made solo to practice all the concepts learned during my training.",
     "imageSrc": "/images/odd.webp",
     "tags": [
-      { "id": 1, "name": "Vanilla JS" },
-      { "id": 2, "name": "HTML" },
-      { "id": 3, "name": "Vanilla CSS" },
-      { "id": 4, "name": "EJS" },
       { "id": 5, "name": "Node.js" },
-      { "id": 6, "name": "PostgreSQL" }
+      { "id": 1, "name": "Vanilla JS" },
+      { "id": 3, "name": "CSS" },
+      { "id": 6, "name": "PostgreSQL" },
+      { "id": 4, "name": "Sequelize" },
+      { "id": 2, "name": "HTML" }
     ],
     "links": [
       {

@@ -44,7 +44,7 @@ export const iconComponents = {
   "Node.js": NodejsIcon,
   "Vanilla JS": JavascriptIcon,
   HTML: HtmlIcon,
-  "Vanilla CSS": CssIcon,
+  "CSS": CssIcon,
   Bulma: BulmaIcon,
   PostgreSQL: PostgresqlIcon,
   EJS: EjsIcon,
