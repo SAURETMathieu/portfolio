@@ -53,7 +53,7 @@ export const iconComponents = {
   "Next.js": NextjsIcon,
   Github: GithubIcon,
   Website: WebsiteIcon,
-  Markdown: MarkdownIcon,
+  "Markdown-X": MarkdownIcon,
   "Typescript": TypescriptIcon,
   "Tailwind": TailwindIcon,
   "Express": ExpressIcon,
